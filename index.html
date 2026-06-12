@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicWorld - Tu portal musical</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header con navegación sticky -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-music"></i> MusicWorld
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#genres">Géneros</a></li>
+                    <li><a href="#artists">Artistas</a></li>
+                    <li><a href="#generator">Playlist</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Descubre tu próxima canción favorita</h1>
+            <p>MusicWorld es tu portal para explorar, descubrir y disfrutar de la mejor música. Desde clásicos atemporales hasta los últimos éxitos, encuentra todo lo que necesitas para alimentar tu pasión musical.</p>
+            <a href="#generator" class="btn">Crear Playlist</a>
+        </div>
+    </section>
+
+    <!-- Géneros Musicales -->
+    <section id="genres" class="genres">
+        <div class="container">
+            <h2>Explora los Géneros</h2>
+            <div class="genre-cards">
+                <div class="card">
+                    <div class="card-img" style="background-image: url('rock.jpg')"></div>
+                    <div class="card-content">
+                        <h3>Rock</h3>
+                        <p>Desde el rock clásico hasta sus variantes modernas, descubre la energía y pasión que define este género icónico.</p>
+                        <a href="#" class="btn btn-secondary">Explorar</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img" style="background-image: url('pop.jpg')"></div>
+                    <div class="card-content">
+                        <h3>Pop</h3>
+                        <p>Disfruta de melodías pegadizas y letras que conectan con millones de personas en todo el mundo.</p>
+                        <a href="#" class="btn btn-secondary">Explorar</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img" style="background-image: url('hiphop.jpg')"></div>
+                    <div class="card-content">
+                        <h3>Hip-Hop</h3>
+                        <p>Sumérgete en ritmos urbanos, letras potentes y una cultura que ha revolucionado la música moderna.</p>
+                        <a href="#" class="btn btn-secondary">Explorar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artistas Destacados -->
+    <section id="artists" class="artists">
+        <div class="container">
+            <h2>Artistas Destacados</h2>
+            <div class="artist-slider" id="artistSlider">
+                <!-- Los artistas se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Generador de Playlists -->
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2>Genera tu Playlist Perfecta</h2>
+            <div class="generator-container">
+                <h3>¿Qué tipo de música te gustaría escuchar hoy?</h3>
+                <div class="mood-selector">
+                    <button class="mood-btn" data-mood="energetic">Energética</button>
+                    <button class="mood-btn" data-mood="relaxed">Relajante</button>
+                    <button class="mood-btn" data-mood="happy">Alegre</button>
+                    <button class="mood-btn" data-mood="sad">Melancólica</button>
+                    <button class="mood-btn" data-mood="focus">Concentración</button>
+                </div>
+                
+                <button class="btn" id="generateBtn">Generar Playlist</button>
+                
+                <div class="playlist-result" id="playlistResult">
+                    <h3>Tu Playlist Personalizada</h3>
+                    <p>Basado en tu estado de ánimo, hemos creado esta lista especial para ti:</p>
+                    <ul class="song-list" id="songList">
+                        <!-- Las canciones se cargarán dinámicamente con JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto y Registro -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Únete a Nuestra Comunidad</h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" class="form-control" placeholder="Tu nombre">
+                        <div class="error-message" id="nameError">Por favor ingresa tu nombre</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" placeholder="tu@email.com">
+                        <div class="error-message" id="emailError">Por favor ingresa un correo electrónico válido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="genre">Género Musical Favorito</label>
+                        <select id="genre" class="form-control">
+                            <option value="">Selecciona un género</option>
+                            <option value="rock">Rock</option>
+                            <option value="pop">Pop</option>
+                            <option value="hiphop">Hip-Hop</option>
+                            <option value="electronic">Electrónica</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="classical">Clásica</option>
+                            <option value="other">Otro</option>
+                        </select>
+                        <div class="error-message" id="genreError">Por favor selecciona un género</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje (opcional)</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Cuéntanos más sobre tus gustos musicales..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="submitBtn">Enviar</button>
+                    
+                    <div class="success-message" id="successMessage">
+                        ¡Gracias por registrarte! Pronto recibirás nuestras actualizaciones.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-music"></i> MusicWorld
+                    </div>
+                    <p>Tu destino único para descubrir, disfrutar y compartir música. Conectamos artistas con oyentes, creando una comunidad global unida por la pasión por la música.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#genres">Géneros</a></li>
+                        <li><a href="#artists">Artistas</a></li>
+                        <li><a href="#generator">Playlist</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir las últimas noticias y lanzamientos musicales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico">
+                        <button class="newsletter-btn"><i class="fas fa-envelope"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MusicWorld Made by Yanny. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
